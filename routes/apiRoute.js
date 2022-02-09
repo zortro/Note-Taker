@@ -13,9 +13,9 @@ apiRoute.get('/notes', (req, res) => {
 apiRoute.post('/notes', (req, res) => {
     console.info(`${req.method} request to submit new note received`)
 
-    const { title, text, id } = req.body
+    const { title, text} = req.body
 
-    if (title && text && id) {
+    if (title && text) {
         const newNote = {
             title,
             text,
@@ -45,6 +45,7 @@ apiRoute.get('/notes/:id', (req, res) => {
 //GET route for deleting '/notes/:id'
 apiRoute.delete('/notes/:id', (req, res) => {
     console.info(`${req.method} request to delete note received`)
+
 })
 
 module.exports = apiRoute
